@@ -42,7 +42,7 @@ Results from a 10,000-game baseline simulation with 4 heuristic players:
 
 ![Win rate vs. strategy aggressiveness](assets/monopoly_strategy_sensitivity.png)
 
-**Landing frequency drives value** Property values are driven in part by how often players land on each space. The simulation's empirical landing frequencies confirm the well-known distortion caused by the Jail mechanism — properties on the stretch from Jail to Free Parking see disproportionately high traffic.
+**Landing frequency drives value.** Property values are driven in part by how often players land on each space. The simulation's empirical landing frequencies confirm the well-known distortion caused by the Jail mechanism — properties on the stretch from Jail to Free Parking see disproportionately high traffic.
 
 ![Landing frequency by board position](assets/monopoly_landing_freq.png)
 
