@@ -2,7 +2,7 @@
 
 # Monopoly POMDP: A Bayesian Simulation Engine for Monopoly Win Probabilities
 
-A rules-exact Monopoly simulation built on a **Partially Observable Markov Decision Process (POMDP)** architecture, with **Monte Carlo win probability estimation** and an optional **PPO reinforcement learning** agent. Designed for statistical research into the emergent economics of Monopoly.
+A rules-exact Monopoly simulation built on a **Partially Observable Markov Decision Process (POMDP)** architecture, with **Monte Carlo win probability estimation** and an optional **PPO reinforcement learning** agent.
 
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 
