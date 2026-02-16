@@ -30,6 +30,8 @@ Results from a 10,000-game baseline simulation with 4 heuristic players:
 | Player 0 (first mover) win rate | ~31% |
 | Player 1–3 win rate | ~22–24% each |
 
+![Baseline simulation results](assets/monopoly_baseline.png)
+
 **First-mover advantage is real and measurable.** Going first yields roughly a 6 percentage-point edge over the fair baseline of 25%. This is consistent with published Monopoly analysis and emerges naturally from the simulation without being hardcoded — the first player simply lands on unowned properties first, completes color sets earlier, and begins collecting building rent sooner.
 
 **The Bayesian win estimator captures momentum shifts.** In a traced game, a player's estimated win probability rose from 0.27 at turn 20 to 0.93 by turn 120 as they accumulated buildings on high-traffic properties. The tipping point— where one player's advantage becomes effectively irreversible — typically occurs around turns 80–120, when developed monopolies begin generating rents that exceed opponents' ability to recover via GO salary.
@@ -37,6 +39,12 @@ Results from a 10,000-game baseline simulation with 4 heuristic players:
 **Buildings are the game.** Without buildings, base rents are trivially small (Mediterranean: $2, Boardwalk: $50). The GO salary of $200 per lap easily absorbs these costs, creating an economic equilibrium where no one ever goes bankrupt. The simulation only produces realistic game lengths when players actively build houses and hotels — confirming that **monopoly formation and development is the core economic engine**, not property collection alone.
 
 **Aggression is a winning strategy.** Sensitivity analysis across the risk profile parameter θ (ranging from 0.1 to 1.0) shows a clear positive correlation between aggressiveness and win rate. Players with high θ values — who keep smaller cash reserves, buy more readily, build earlier, and pay bail to stay active — consistently outperform conservative players. This aligns with competitive Monopoly wisdom: the game rewards players who convert cash into rent-generating assets as quickly as possible, because liquid cash earns nothing while buildings compound. The player who develops first forces opponents into a defensive cycle of paying rent, mortgaging to survive, and falling further behind.
+
+![Win rate vs. strategy aggressiveness](assets/monopoly_strategy_sensitivity.png)
+
+**Landing frequency drives value** Property values are driven in part by how often players land on each space. The simulation's empirical landing frequencies confirm the well-known distortion caused by the Jail mechanism — properties on the stretch from Jail to Free Parking see disproportionately high traffic.
+
+![Landing frequency by board position](assets/monopoly_landing_freq.png)
 
 ## Architecture
 
