@@ -50,29 +50,29 @@ Results from a 10,000-game baseline simulation with 4 heuristic players:
 
 ```
 ┌─────────────────────────────────────────────────┐
-│                  TrueState                       │
-│  ┌──────────────────┐  ┌──────────────────────┐ │
-│  │  ObservableState  │  │    HiddenState        │ │
-│  │  · Player cash    │  │  · Deck permutations  │ │
-│  │  · Positions      │  │  · Opponent profiles   │ │
-│  │  · Property       │  │    (θ ∈ [0,1])        │ │
-│  │    ownership      │  │                        │ │
-│  │  · Building       │  └──────────────────────┘ │
-│  │    counts         │                            │
-│  │  · Deck prob      │                            │
-│  │    vectors        │                            │
-│  └──────────────────┘                            │
+│                  TrueState                      │
+│  ┌───────────────────┐  ┌──────────────────────┐│
+│  │  ObservableState  │  │    HiddenState       ││
+│  │  · Player cash    │  │  · Deck permutations ││
+│  │  · Positions      │  │  · Opponent profiles ││
+│  │  · Property       │  │    (θ ∈ [0,1])       ││
+│  │    ownership      │  │                      ││
+│  │  · Building       │  └──────────────────────┘│
+│  │    counts         │                          │
+│  │  · Deck prob      │                          │
+│  │    vectors        │                          │
+│  └───────────────────┘                          │
 └─────────────┬───────────────────────────────────┘
               │
               ▼
-┌─────────────────────────┐    ┌────────────────────────┐
+┌─────────────────────────┐    ┌─────────────────────────┐
 │    MonopolyPOMDP        │    │ WinLikelihoodEstimator  │
 │    (Game Engine)        │───▶│ (Monte Carlo Rollouts)  │
-│  · Strict rules impl   │    │ · Sample N deck perms   │
+│  · Strict rules impl    │    │ · Sample N deck perms   │
 │  · Heuristic agents     │    │ · Sample K profiles     │
 │  · Trade/auction logic  │    │ · Rollout to terminal   │
 └─────────────────────────┘    │ · Output: P(win|state)  │
-              │                 └────────────────────────┘
+              │                └─────────────────────────┘
               ▼
 ┌─────────────────────────┐
 │    MonopolyGymEnv       │
