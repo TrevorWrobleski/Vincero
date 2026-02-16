@@ -169,7 +169,7 @@ evaluate_agent(model, env, n_games=500)
 | Parameter | Where | Default | What it controls |
 |---|---|---|---|
 | `num_players` | `MonopolyPOMDP()` | 4 | Number of players (2–8) |
-| `seed` | `MonopolyPOMDP()` | None | RNG seed for reproducibility |
+| `seed` | `MonopolyPOMDP()` | 2629 | RNG seed for reproducibility |
 | `max_turns` | `simulate_game()` | 2000 | Turn cap before declaring a draw |
 
 ### Scenario Builder — Custom Board States
